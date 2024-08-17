@@ -15,7 +15,6 @@ const App = () => {
       <Languages/>
       <Projects/>
       <Contactme/>
-      
     </div>
   )
 }

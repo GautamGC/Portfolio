@@ -1,50 +1,45 @@
-import React, { useEffect, useRef } from 'react';
 
-const projects = [
-  {
-    title: 'PokeSite',
-    description: 'My First Project',
-    image: './public/project1.png',
-    link: 'https://github.com/GautamGC/PokeSite',
-    languages: ['HTML', 'CSS', 'JavaScript'],
-  },
-  {
-    title: 'RestrauntSite',
-    description: 'Project deepicting the full use of Full Stack Development',
-    image: './public/project2.png',
-    link: 'https://github.com/GautamGC/RestaurantPage',
-    languages: ['React', 'Node.js' ,'MongoDB', 'ExpressJS'],
-  },
-  {
-    title: 'Project Three',
-    description: 'This is the third project.',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://www.stackoverflow.com',
-    languages: ['Python', 'Django'],
-  },
-];
+import React, { useRef, useEffect } from 'react';
+
+const projects = [{
+  title: 'PokeSite',
+  description: 'My First Project',
+  image: '/project1.png',
+  link: 'https://github.com/GautamGC/PokeSite',
+  languages: ['HTML', 'CSS', 'JavaScript'],
+},
+{
+  title: 'RestrauntSite',
+  description: 'Project deepicting the full use of Full Stack Development',
+  image: '/Project2.png',
+  link: 'https://github.com/GautamGC/RestaurantPage',
+  languages: ['React', 'Node.js' ,'MongoDB', 'ExpressJS'],
+},
+{
+  title: 'Project Three',
+  description: 'This is the third project.',
+  image: 'https://via.placeholder.com/300x200',
+  link: 'https://www.stackoverflow.com',
+  languages: ['Python', 'Django'],
+},]; 
 
 const Projects = () => {
   const cardRefs = useRef([]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    setTimeout(() => {
-      cardRefs.current.forEach((ref) => {
-        if (ref) {
-          observer.observe(ref);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
         }
       });
-    }, 100);
+    }, { threshold: 0 });
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
 
     return () => {
       cardRefs.current.forEach((ref) => {
@@ -63,12 +58,18 @@ const Projects = () => {
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            className="project-card bg-zinc-900 text-white p-6 rounded-lg shadow-md relative overflow-hidden transition-transform duration-300 hover:scale-110 hover:bg-fuchsia-950">
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="block relative group">
+            className="project-card bg-zinc-900 text-white p-6 rounded-lg shadow-md relative overflow-hidden transition-transform duration-300 hover:scale-110 hover:bg-fuchsia-950"
+          >
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block relative group"
+            >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-t-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 "
+                className="w-full h-48 object-cover rounded-t-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
