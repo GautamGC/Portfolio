@@ -58,11 +58,9 @@ body{
     }
   }
   
+
+
 /*Project.jsx(Cards)*/
-
- 
-  /* Projects.css */
-
 .project-card {
   opacity: 0;
   transform: translateX(-120%); /* Initially off-screen to the left */
@@ -71,23 +69,24 @@ body{
 
 .project-card.show {
   opacity: 1;
-  transform: translateX(0); /* Slides into view */
+  transform: translateX(0); 
 }
-
-.project-card:hover {
-  transform: translateX(0) perspective(1000px) rotateY(0); /* Reset any translation */
-}
-
-.project-card-inner {
-  transition: transform 0.3s ease-out;
-  transform-style: preserve-3d; /* Enable 3D transformation */
-}
-
-.project-card:hover .project-card-inner {
-  transform: perspective(1000px); /* Create a 3D perspective */
+/* Projects.css */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Smooth zoom-out transition */
 }
 
 .project-card img {
-  transition: transform 0.3s ease-in-out;
-  transform-origin: center center; /* Center the origin for the rotation */
+  transition: transform 0.3s ease;
 }
+
+.project-card .overlay {
+  transition: opacity 0.3s ease;
+}
+
+
+
+
+
