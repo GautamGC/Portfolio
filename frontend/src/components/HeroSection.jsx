@@ -20,12 +20,12 @@ const HeroSection = () => {
             I'm <span className="text-white text-5xl md:text-6xl lg:text-8xl">Gautam Chauhan</span>;<br />
             A Full Stack Developer;<br />And A CS Engineering Student.
           </div>
-          <br/>
-          <button className="bg-black hover:bg-slate-800 text-white text-2xl font-semibold py-2 px-4 rounded-full shadow-lg focus:outline-none">
-            <a href="resume.pdf" download>
+          <br />
+          <a href="https://drive.google.com/uc?export=download&id=1-iUP-Tw7ifRa2t5uWmgAudpiTgf_bMRr" download="My_Resume.pdf">
+            <button className="bg-black hover:bg-slate-800 text-white text-2xl font-semibold py-2 px-4 rounded-full shadow-lg focus:outline-none">
               My Resume
-            </a>
-          </button>
+            </button>
+          </a>
         </div>
       </div>
       <div className="absolute right-0 top-0 h-screen flex justify-end items-center">
@@ -68,12 +68,10 @@ const HeroSection = () => {
               <a href="mailto:gautamchauhan.officialgc@gmail.com" target="_blank" rel="noopener noreferrer">
                 <img src="mail.png" alt="Mail" className="w-8 h-8 my-4" />
               </a>
-              <a href="My_Resume.pdf" download>
-              <button className="bg-black hover:bg-slate-800 text-white font-semibold py-2 px-4 rounded-full shadow-lg focus:outline-none">
-              <a href="https://drive.google.com/file/d/1-iUP-Tw7ifRa2t5uWmgAudpiTgf_bMRr/view?usp=sharing" download="My_Resume.pdf">
-                Download Resume
-              </a>
-              </button>
+              <a href="https://github.com/GautamGC/Portfolio/blob/master/frontend/public/My_Resume.pdf" download="My_Resume.pdf">
+                <button className="bg-black hover:bg-slate-800 text-white font-semibold py-2 px-4 rounded-full shadow-lg focus:outline-none">
+                  Download Resume
+                </button>
               </a>
             </div>
           )}
@@ -83,4 +81,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection
+export default HeroSection;
