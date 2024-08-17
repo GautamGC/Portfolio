@@ -23,7 +23,7 @@ const HeroSection = () => {
           <br/>
           <button className="bg-black hover:bg-slate-800 text-white text-2xl font-semibold py-2 px-4 rounded-full shadow-lg focus:outline-none">
             <a href="resume.pdf" download>
-              Download Resume
+              My Resume
             </a>
           </button>
         </div>

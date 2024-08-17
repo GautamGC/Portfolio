@@ -14,7 +14,6 @@ const App = () => {
       <HeroSection/>
       <Languages/>
       <Projects/>
-      <ModelViewer/>
       <Contactme/>
       
     </div>

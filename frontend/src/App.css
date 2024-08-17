@@ -72,21 +72,24 @@ body{
   transform: translateX(0); 
 }
 /* Projects.css */
+/* Projects.css */
 .project-card {
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease; /* Smooth zoom-out transition */
+  opacity: 0;
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Smooth slide-in and fade-in */
+}
+
+.project-card.show {
+  opacity: 1;
+  transform: translateX(0); /* Slide into view */
 }
 
 .project-card img {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .project-card .overlay {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
-
-
-
-
-
