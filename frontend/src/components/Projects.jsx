@@ -58,7 +58,7 @@ const Projects = () => {
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            className="project-card bg-zinc-900 text-white p-6 rounded-lg shadow-md relative overflow-hidden transition-transform duration-300 hover:scale-110 hover:bg-fuchsia-950"
+            className="project-card bg-zinc-900 text-white p-6 rounded-lg shadow-md relative overflow-hidden transition-transform duration-300 hover:scale-110 hover:bg-neutral-500"
           >
             <a
               href={project.link}
